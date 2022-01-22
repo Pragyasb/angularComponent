@@ -1,0 +1,13 @@
+<mat-card class="example-card mat-elevation-z8">
+<h1>Child Component</h1>
+<mat-form-field appearance="fill" >
+
+<input matInput  type="text" 
+[(ngModel)]="childData"> 
+</mat-form-field>
+<button mat-raised-button color="primary" (click)="addData(childData)">Add data to parent</button>
+
+<p>Parent's data is {{parentValueOne}}</p>
+<p>Child Two Data is: {{childOneData}}</p>
+
+</mat-card>

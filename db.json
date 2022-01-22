@@ -1,0 +1,31 @@
+{
+  "posts": [
+    {
+      "name": "pragya",
+      "email": "spragya007@gmail.com",
+      "doj": "2022-01-26T18:30:00.000Z",
+      "gender": "female",
+      "city": "kolkata",
+      "desc": "qwertyuiop[",
+      "id": 1
+    },
+    {
+      "name": "Alex",
+      "email": "alex@gmail.com",
+      "doj": "2022-01-02T18:30:00.000Z",
+      "gender": "male",
+      "city": "Chennai",
+      "desc": "zxcvbnm,",
+      "id": 2
+    },
+    {
+      "name": "fgh",
+      "email": "asd@g",
+      "doj": "2022-01-04T18:30:00.000Z",
+      "gender": "female",
+      "city": "asdxfcgv",
+      "desc": "sdfvgbhn",
+      "id": 3
+    }
+  ]
+}

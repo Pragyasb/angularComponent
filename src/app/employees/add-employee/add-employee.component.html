@@ -1,0 +1,115 @@
+<h1 mat-dialog-title>Enter Employee Details </h1>
+
+<mat-divider [inset]="true"></mat-divider>
+
+<div mat-dialog-content>
+<form class="login-form data-form"
+#loginForm="ngForm">
+<table  class="example-full-width" cellspacing="0">
+  <tr>
+    <td>
+<!-- name -->
+  <mat-form-field appearance="fill" class="example-full-width">
+    <mat-label>Name</mat-label>
+
+    <input matInput  type="text"
+    name="name"
+    ngModel
+    required
+    #name="ngModel"> 
+
+    <mat-error *ngIf="name.errors?.['required']">The name is mandatory</mat-error>
+  </mat-form-field></td>
+
+ <!-- email -->
+ <td class="em"> 
+  <mat-form-field  appearance="fill" class="example-full-width">
+    <mat-label>Email</mat-label>
+
+    <input matInput  type="email"
+    name="email"
+    ngModel
+    required email
+    #email="ngModel">
+
+    <mat-error *ngIf="email.errors?.['required']" >The email is mandatory</mat-error>
+    <mat-error *ngIf="email.errors?.['email']">not a valid email</mat-error>
+  </mat-form-field></td>
+</tr>
+</table>
+
+
+
+<table  class="example-full-width" cellspacing="0">
+  <tr><td>
+<!-- doj -->
+  <mat-form-field appearance="fill" class="example-full-width">
+    <mat-label>Date Of Joining</mat-label>
+    <input matInput [matDatepicker]="picker"
+    ngModel
+    name="doj"
+    #doj="ngModel"
+    required >
+    
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+
+    <mat-error *ngIf="doj.errors?.['required']" >Date of joining is mandatory</mat-error>
+    
+  </mat-form-field></td>
+<td class="gn">
+ <!-- gender -->
+ <mat-form-field appearance="fill" class="example-full-width">
+  <mat-label>Select Gender</mat-label>
+  <mat-select name="gender"  ngModel #gender="ngModel" required>
+    <mat-option value="male">Male</mat-option>
+    <mat-option value="female">Female</mat-option>
+  </mat-select>
+
+  <mat-error *ngIf="gender.errors?.['required']">The gender is mandatory</mat-error>
+
+</mat-form-field></td>
+</tr>
+</table>
+
+
+
+<p>
+   <!-- city -->
+  <mat-form-field  appearance="fill" class="example-full-width">
+    <mat-label>Address</mat-label>
+
+    <input matInput  type="text"
+    name="city"
+    ngModel
+    required
+    #city="ngModel" >
+
+    <mat-error *ngIf="city.errors?.['required']">The city is mandatory</mat-error>
+    </mat-form-field>
+  </p>
+<p>
+     <!-- description -->
+      <mat-form-field appearance="fill" class="example-full-width">
+        <mat-label>Describe Yourself</mat-label>
+        <textarea matInput 
+        ngModel
+        name="desc"
+        #desc="ngModel"
+        required=""
+        ></textarea>
+          <mat-hint align="end">
+            {{ desc.value.length}} /20
+          </mat-hint>
+
+        <mat-error *ngIf="desc.errors?.['required']" >Description is mandatory</mat-error>
+
+      </mat-form-field>
+  </p>
+</form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="accent" mat-dialog-close [disabled]="!loginForm.valid" 
+  (click)="formSubmit(loginForm.value)" >Submit</button>
+  <button mat-raised-button  mat-dialog-close color="warn" >Close</button>
+</div>
